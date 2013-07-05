@@ -26,6 +26,7 @@ class Moot {
       add_filter('the_content', array($this, 'add_comments'));
       add_action('admin_menu', array($this, 'add_admin_menu'));
       add_action('admin_init', array($this, 'add_settings'));
+      add_shortcode('moot-forum', array($this, 'forum_shortcode'));
    }
 
 
@@ -52,8 +53,9 @@ class Moot {
 
       if ($forumname != null) {
          $page_id = sanitize_title(get_the_title());
-         $content .= "<a id='moot' href='https://moot.it/i/$forumname/wordpress/$page_id'>Comments</a>";
+         $content .= "<a id='moot-comments' href='https://moot.it/i/$forumname/wordpress/$page_id'>Comments</a>";
       }
+
       return $content;
    }
 
@@ -74,6 +76,11 @@ class Moot {
 
    public function render_admin() {
       include_once('admin/admin.php');
+   }
+
+   public function forum_shortcode() {
+      $forumname = get_option('moot_forum_name');
+      return "<a id='moot' href='https://moot.it/i/$forumname'>$forumname forums</a>";
    }
 
 }

@@ -51,7 +51,7 @@
          }
       } : {};
 
-      var default_moot = $("#moot-default"),
+      var default_moot = $("#moot-comments"),
          user_moot = $("#moot");
 
       if (user_moot[0]) {

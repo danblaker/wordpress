@@ -24,6 +24,7 @@
          "user" => array(
             "id" => $user_info->user_login,
             "email" => $user_info->user_email,
+            "avatar" => "//gravatar.com/avatar/" . md5($user_info->user_email),
             "displayname" => $display_name,
             "is_admin" => current_user_can('level_10')
          )

@@ -1,8 +1,8 @@
 
 <style>
-   .comments-link, #comments, #recent-comments-2, a[href*=comments-rss] { display: none !important; }
-   .moot { max-width: 100%; }
-   .moot .m-title { line-height: 1.1; margin: 0; }
+.comments-link, #comment-wrap, #comments, #recent-comments-2, a[href*=comments-rss] { display: none !important; }
+.moot { max-width: 100%; }
+.moot .m-title { line-height: 1.1; margin: 0; }
 </style>
 
 <?php

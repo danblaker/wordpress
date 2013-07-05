@@ -13,7 +13,7 @@
    if ($key) {
       $timestamp = time();
 
-      $user_info = get_userdata(1);
+      $user_info = wp_get_current_user();
 
       $display_name = $user_info->user_firstname ?
          $user_info->user_firstname . " " . $user_info->user_lastname :

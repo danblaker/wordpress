@@ -51,14 +51,15 @@
          }
       } : {};
 
-      var my_moot = $("#my_moot");
+      var default_moot = $("#moot-default"),
+         user_moot = $("#moot");
 
-      if (my_moot[0]) {
-         my_moot.moot(moot_conf);
-         $("#moot").remove();
+      if (user_moot[0]) {
+         user_moot.moot(moot_conf);
+         default_moot.remove();
 
       } else {
-         $("#moot").moot(moot_conf);
+         default_moot.moot(moot_conf);
       }
 
    })

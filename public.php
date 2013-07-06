@@ -20,11 +20,16 @@
          $user_info->display_name
       ;
 
+      $avatar = is_callable(bp_core_fetch_avatar) ?
+         bp_core_fetch_avatar(array(item_id => $user_info->ID, 'html' => false)) :
+         "//gravatar.com/avatar/" . md5($user_info->user_email)
+      ;
+
       $sso = array(
          "user" => array(
             "id" => $user_info->user_login,
             "email" => $user_info->user_email,
-            "avatar" => "//gravatar.com/avatar/" . md5($user_info->user_email),
+            "avatar" => $avatar,
             "displayname" => $display_name,
             "is_admin" => current_user_can('level_10')
          )

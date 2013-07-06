@@ -40,14 +40,16 @@ class Moot {
    }
 
    public function js_and_css() {
-      wp_enqueue_style("moot", '//cdn.moot.it/latest/moot.css', array(), $this->version);
-      wp_enqueue_script("", '//cdn.moot.it/latest/moot.min.js', array('jquery'), $this->version);
+      if (!is_home()) {
+         wp_enqueue_style("moot", '//cdn.moot.it/latest/moot.css', array(), $this->version);
+         wp_enqueue_script("", '//cdn.moot.it/latest/moot.min.js', array('jquery'), $this->version);
+      }
    }
 
    public function add_comments($content) {
       $forumname = get_option('moot_forum_name');
 
-      if ($forumname != null) {
+      if (!is_home() && $forumname != null) {
          $page_id = sanitize_title(get_the_title());
          $content .= "<a id='moot-comments' href='https://moot.it/i/$forumname/wordpress/$page_id'>Comments</a>";
       }

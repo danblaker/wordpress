@@ -9,3 +9,10 @@ License URI: http://opensource.org/licenses/MIT
 
 Realtime forums and commenting for Wordpress.
 
+
+## Shortcodes
+
+[moot]
+[moot forum="true"]
+[moot threaded="true"]
+[moot path="/wordpress"]

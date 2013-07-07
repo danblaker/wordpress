@@ -1,6 +1,9 @@
 
 <style>
-.comments-link, #comment-wrap, #comments, #recent-comments-2, a[href*=comments-rss] { display: none !important; }
+/* Hide default comments in place for Moot: https://moot.it */
+.comments-link, #comment-wrap, #comments, #recent-comments-2, a[href*=comments-rss], a[href*='comments/feed'] {
+   display: none !important;
+}
 .moot { max-width: 100%; }
 .moot p { margin-bottom: 0; }
 .moot h2, .moot h3 { margin: 0; clear: none; }

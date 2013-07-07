@@ -21,12 +21,12 @@ class Moot {
 
 
    private function __construct() {
-      add_action('wp_enqueue_scripts', array($this, 'js_and_css'));
-      add_action('wp_head', array($this, 'add_head'));
-      add_filter('the_content', array($this, 'add_comments'));
-      add_action('admin_menu', array($this, 'add_admin_menu'));
-      add_action('admin_init', array($this, 'add_settings'));
-      add_shortcode('moot-forum', array($this, 'forum_shortcode'));
+      add_action('wp_enqueue_scripts', array($this, 'moot_includes'));
+      add_action('wp_head', array($this, 'moot_head'));
+      add_filter('the_content', array($this, 'default_comments'));
+      add_action('admin_menu', array($this, 'moot_admin_menu'));
+      add_action('admin_init', array($this, 'moot_settings'));
+      add_shortcode('moot', array($this, 'moot_shortcode'));
    }
 
 
@@ -35,50 +35,70 @@ class Moot {
       return self::$instance;
    }
 
-   public function add_head() {
+   public function moot_head() {
       require_once(plugin_dir_path(__FILE__) . 'public.php');
    }
 
-   public function js_and_css() {
+   public function moot_includes() {
       if (!is_home()) {
          wp_enqueue_style("moot", '//cdn.moot.it/latest/moot.css', array(), $this->version);
          wp_enqueue_script("", '//cdn.moot.it/latest/moot.min.js', array('jquery'), $this->version);
       }
    }
 
-   public function add_comments($content) {
+   public function default_comments($content) {
       $forumname = get_option('moot_forum_name');
 
       if (!is_home() && $forumname != null) {
          $page_id = sanitize_title(get_the_title());
-         $content .= "<a id='moot-comments' href='https://moot.it/i/$forumname/wordpress/$page_id'>Comments</a>";
+         $content .= "<a id='moot-comments' href='https://moot.it/i/$forumname/wordpress:$page_id'>Comments</a>";
       }
 
       return $content;
    }
 
-   public function add_settings($content) {
+   public function moot_settings($content) {
       register_setting('moot_options', 'moot_forum_name');
       register_setting('moot_options', 'moot_api_key');
       register_setting('moot_options', 'moot_secret_key');
    }
 
    // admin menu
-   public function add_admin_menu() {
+   public function moot_admin_menu() {
       $this->plugin_screen_hook_suffix = add_plugins_page(
          __('Moot', $this->plugin_slug),
          __('Moot', $this->plugin_slug),
-         'read', $this->plugin_slug, array($this, 'render_admin')
+         'read', $this->plugin_slug, array($this, 'moot_admin')
       );
    }
 
-   public function render_admin() {
+   public function moot_admin() {
       include_once('settings.php');
    }
 
-   public function forum_shortcode() {
+   public function moot_shortcode($params) {
+
+      extract( shortcode_atts( array(
+         'forum' => false,
+         'threaded' => false,
+         'path' => false
+
+      ), $params) );
+
       $forumname = get_option('moot_forum_name');
-      return "<a id='moot' href='https://moot.it/i/$forumname'>$forumname forums</a>";
+
+      if ($forumname == null) return "";
+
+      $tag = "<a id='moot' href='https://moot.it/i/$forumname";
+      $page_id = sanitize_title(get_the_title());
+
+
+      // (bool ? this : that) not working
+      if ($forum)    return "$tag'>$forumname forums</a>";
+      if ($threaded) return "$tag/wordpress/$page_id'>Comments</a>";
+      if ($path)     return "$tag/$path'>Comments are here</a>";
+                     return "$tag/wordpress:$page_id'>Comments</a>";
+
    }
 
 }

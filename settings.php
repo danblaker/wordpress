@@ -8,6 +8,7 @@
    #moot-settings input[type=text] { padding: .4em; }
    #moot-settings .submit { padding: 0; }
    #saved { background-color: #333; color: #fff; padding: .4em; border-radius: 4px; display: none; }
+   #no-sso { margin-top: 3em; border-top: 1px solid #ddd; }
 </style>
 
 <div class="wrap" id="moot-settings">
@@ -18,12 +19,19 @@
 
    <form method="post" action="options.php">
 
-      <?php settings_fields('moot_options'); do_settings_fields('moot_options', true); ?>
+      <?php
+         settings_fields('moot_options');
+         do_settings_fields('moot_options', true);
+         $forumname = get_option('moot_forum_name');
+         $key = get_option('moot_api_key');
+      ?>
 
       <label>
          <strong>Forum name</strong>
-         <input type="text" name="moot_forum_name" value="<?php echo get_option('moot_forum_name'); ?>" size="15">
+         <input type="text" name="moot_forum_name" value="<?php echo $forumname; ?>" size="15">
       </label>
+
+      <?php if ($forumname) { ?>
 
       <label>
          <strong>Language</strong>
@@ -52,15 +60,34 @@
          </select>
       </label>
 
+      <?php if (!$key) { ?>
+
+         <div id="no-sso">
+            <h3>Single Sign-On</h3>
+
+            <p>
+               <a href="https://moot.it/upgrade" target="_new">Upgrade Moot</a> to use the Wordpress login.
+               Users will only enter the login information once.
+            </p>
+         </div>
+
+      <?php } ?>
+
       <label>
          <strong>API key</strong>
-         <input type="text" name="moot_api_key" value="<?php echo get_option('moot_api_key'); ?>" size="15">
+         <input type="text" name="moot_api_key" value="<?php echo $key; ?>" size="15">
       </label>
 
       <label>
          <strong>Secret key</strong>
          <input type="text" name="moot_secret_key" value="<?php echo get_option('moot_secret_key'); ?>" size="25">
       </label>
+
+      <?php } else { ?>
+
+      <p>New to Moot? <a href="https://moot.it/setup" target="_new">Create a new forum&hellip;</a></p>
+
+      <?php } ?>
 
       <?php submit_button(); ?>
 

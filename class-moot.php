@@ -42,7 +42,12 @@ class Moot {
    public function moot_includes() {
       if (!is_home()) {
          wp_enqueue_style("moot", '//cdn.moot.it/latest/moot.css', array(), $this->version);
-         wp_enqueue_script("", '//cdn.moot.it/latest/moot.min.js', array('jquery'), $this->version);
+
+         $lang = get_option('moot_language');
+         if ($lang == 'en') $lang = "";
+         if ($lang) $lang = "." . $lang;
+
+         wp_enqueue_script("", "//cdn.moot.it/latest/moot$lang.min.js", array('jquery'), $this->version);
       }
    }
 
@@ -61,6 +66,7 @@ class Moot {
       register_setting('moot_options', 'moot_forum_name');
       register_setting('moot_options', 'moot_api_key');
       register_setting('moot_options', 'moot_secret_key');
+      register_setting('moot_options', 'moot_language');
    }
 
    // admin menu

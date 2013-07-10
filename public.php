@@ -54,6 +54,7 @@
 
    $(function() {
 
+
       var moot_conf = "<?php echo $key; ?>" ? {
          sso: {
             key: '<?php echo $key; ?>',
@@ -65,6 +66,8 @@
 
       var default_moot = $("#moot-comments"),
          user_moot = $("#moot");
+
+      if ($("#no-moot")[0]) return default_moot.remove();
 
       if (user_moot[0]) {
          user_moot.moot(moot_conf);

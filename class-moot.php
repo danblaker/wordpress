@@ -27,6 +27,7 @@ class Moot {
       add_action('admin_menu', array($this, 'moot_admin_menu'));
       add_action('admin_init', array($this, 'moot_settings'));
       add_shortcode('moot', array($this, 'moot_shortcode'));
+      add_shortcode('no-moot', array($this, 'moot_disable'));
    }
 
 
@@ -80,6 +81,10 @@ class Moot {
 
    public function moot_admin() {
       include_once('settings.php');
+   }
+
+   public function moot_disable() {
+      return "<span id='no-moot'></span>";
    }
 
    public function moot_shortcode($params) {

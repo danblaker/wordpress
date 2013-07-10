@@ -60,6 +60,12 @@
          </select>
       </label>
 
+      <label>
+         <input type="checkbox" name="moot_generate" value="true"
+            <?php if (get_option('moot_generate') == "true") echo "checked"; ?> >
+         Use Moot commenting on every page
+      </label>
+
       <?php if (!$key) { ?>
 
          <div id="no-sso">

@@ -55,7 +55,7 @@ class Moot {
    public function default_comments($content) {
       $forumname = get_option('moot_forum_name');
 
-      if (!is_home() && $forumname != null) {
+      if (!is_home() && $forumname != null && get_option('moot_generate') == "true") {
          $page_id = sanitize_title(get_the_title());
          $content .= "<a id='moot-comments' href='https://moot.it/i/$forumname/wordpress:$page_id'>Comments</a>";
       }
@@ -68,6 +68,7 @@ class Moot {
       register_setting('moot_options', 'moot_api_key');
       register_setting('moot_options', 'moot_secret_key');
       register_setting('moot_options', 'moot_language');
+      register_setting('moot_options', 'moot_generate');
    }
 
    // admin menu

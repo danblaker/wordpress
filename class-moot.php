@@ -41,7 +41,9 @@ class Moot {
    }
 
    public function moot_includes() {
+
       if (!is_home()) {
+
          wp_enqueue_style("moot", '//cdn.moot.it/latest/moot.css', array(), $this->version);
 
          $lang = get_option('moot_language');
@@ -55,7 +57,7 @@ class Moot {
    public function default_comments($content) {
       $forumname = get_option('moot_forum_name');
 
-      if (!is_home() && $forumname != null && get_option('moot_generate') == "true") {
+      if (!is_home() && $forumname != null && get_option('moot_generate') == "true" && get_post_type() == "post") {
          $page_id = sanitize_title(get_the_title());
          $content .= "<a id='moot-comments' href='https://moot.it/i/$forumname/wordpress:$page_id'>Comments</a>";
       }

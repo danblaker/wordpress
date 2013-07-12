@@ -54,7 +54,6 @@
 
    $(function() {
 
-
       var moot_conf = "<?php echo $key; ?>" ? {
          sso: {
             key: '<?php echo $key; ?>',

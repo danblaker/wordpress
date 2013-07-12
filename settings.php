@@ -63,7 +63,7 @@
       <label>
          <input type="checkbox" name="moot_generate" value="true"
             <?php if (get_option('moot_generate') == "true") echo "checked"; ?> >
-         Use Moot commenting on every page
+         Use Moot commenting on posts
       </label>
 
       <?php if (!$key) { ?>

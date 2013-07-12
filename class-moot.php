@@ -59,7 +59,7 @@ class Moot {
 
       if (!is_home() && $forumname != null && get_option('moot_generate') == "true" && get_post_type() == "post") {
          $page_id = sanitize_title(get_the_title());
-         $content .= "<a id='moot-comments' href='https://moot.it/i/$forumname/wordpress:$page_id'>Comments</a>";
+         $content .= "<a id='moot-default-comments' href='https://moot.it/i/$forumname/wordpress:$page_id'>Comments</a>";
       }
 
       return $content;

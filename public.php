@@ -63,7 +63,7 @@
          }
       } : {};
 
-      var default_moot = $("#moot-comments"),
+      var default_moot = $("#moot-default-comments"),
          user_moot = $("#moot");
 
       if ($("#no-moot")[0]) return default_moot.remove();

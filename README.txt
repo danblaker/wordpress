@@ -1,7 +1,15 @@
+=== Plugin Name ===
+Contributors: tipiirai
+Tags: comments, spam
+Requires at least: 3.5.1
+Tested up to: 3.6
+Stable tag: 1.0.0
+License: MIT
+License URI: https://github.com/moot/wordpress/blob/master/LICENSE.txt
 
-**Realtime forums and commenting for Wordpress. A modern and clean alternative. This plugin is currently in beta and the official release will be on August 2013.**
+Realtime forums and commenting for Wordpress. A modern and clean alternative.
 
-### Description
+== Description ==
 
 Moot offers various benefits for a Worpress site. Most notably:
 
@@ -15,11 +23,11 @@ Moot offers various benefits for a Worpress site. Most notably:
 
 Learn more from Moot website: https://moot.it
 
-### Usage
+== Usage ==
 
 Check *Use Moot commenting on posts* from the settings if you simply want to replace Wordpress commenting with Moot. Alternatively you can use the various shortcodes on the content to manually enable or disable Moot commenting:
 
-#### Shortcodes
+### Shortcodes
 
 - `[moot]` enable flat commenting
 - `[moot forum="true"]` enable forums
@@ -36,7 +44,7 @@ In which case you need to understand how [paths](https://moot.it/docs/getting-st
 If you have enabled single sign on from the settings it takes effect on all the forum and commenting instances.
 
 
-### Installation
+== Installation ==
 
 1. Download the zip file: https://github.com/moot/wordpress/archive/master.zip to `/wp-content/plugins/` directory
 2. Unzip the file and rename the `wordpress-master` folder to `moot`

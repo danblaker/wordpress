@@ -3,7 +3,7 @@ Contributors: tipiirai
 Tags: comments, spam
 Requires at least: 3.5.1
 Tested up to: 3.6
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 License: MIT
 License URI: https://github.com/moot/wordpress/blob/master/LICENSE.txt
 

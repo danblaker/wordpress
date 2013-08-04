@@ -3,7 +3,7 @@
  * Plugin Name:   Moot Forums and Commenting
  * Plugin URI:    https://moot.it/docs/wordpress
  * Description:   The new-wave commenting and forums for Wordpress
- * Version:       1.0.0
+ * Version:       2.0.0
  * Author:        Moot Inc
  * Author URI:    https://moot.it
  * Text Domain:   moot

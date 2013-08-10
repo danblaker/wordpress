@@ -5,13 +5,13 @@
  * @package   Moot
  * @author    Tero Piirainen <tero@moot.it>
  * @license   MIT
- * @link      https://moot.it/docs/wordpress
+ * @link      https://moot.it/docs/wordpress.html
  * @copyright 2013 Moot Inc
  */
 
 class Moot {
 
-   protected $version = '1.0.0';
+   protected $version = '2.0.1';
 
    protected $plugin_slug = 'moot';
 

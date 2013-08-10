@@ -1,10 +1,10 @@
 <?php
 /*
  * Plugin Name:   Forums and Commenting re-imagined
- * Plugin URI:    https://moot.it/docs/wordpress
+ * Plugin URI:    https://moot.it/docs/wordpress.html
  * Author URI:    https://moot.it
  * Description:   Realtime forums and commenting for WordPress
- * Version:       2.0.0
+ * Version:       2.0.1
  * Author:        Moot Inc
  * Text Domain:   moot
  * License:       MIT

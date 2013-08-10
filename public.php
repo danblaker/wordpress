@@ -4,9 +4,8 @@
 .comments-link, #comment-wrap, #comments, #recent-comments-2, a[href*=comments-rss], a[href*='comments/feed'] {
    display: none !important;
 }
-.moot { max-width: 100%; }
+.moot { max-width: 100%; margin-bottom: 2em; }
 .moot p { margin-bottom: 0; }
-.moot h2, .moot h3 { margin: 0; clear: none; }
 .moot .m-title { line-height: 1.1; margin: 0; }
 .moot .m-pagetitle { margin: 0 0 .6em; }
 </style>
@@ -53,6 +52,8 @@
 !function($) {
 
    $(function() {
+
+      if (typeof moot != "function") return $("#moot").remove();
 
       var moot_conf = "<?php echo $key; ?>" ? {
          sso: {

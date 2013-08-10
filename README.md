@@ -12,12 +12,12 @@
 - **Seach engine optimized**. Improve search engine ranking with user generated content
 - **Spam filtering**, email notifications and 20+ different language versions
 
-Learn more from Moot website: https://moot.it
+See what Moot is all about: https://moot.it
 
 ### Installation
 
 1. [Setup Moot](https://moot.it/setup)
-2. Upload [the plugin](http://downloads.wordpress.org/plugin/moot.zip) to the '/wp-content/plugins' directory
+2. Upload [the plugin](http://wordpress.org/plugins/moot/) to the '/wp-content/plugins' directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Provide the forum name and other configuration from the plugin settings
 

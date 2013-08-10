@@ -58,7 +58,7 @@
       var moot_conf = "<?php echo $key; ?>" ? {
          sso: {
             key: '<?php echo $key; ?>',
-            timestamp: <?php echo $timestamp; ?>,
+            timestamp: <?php echo $timestamp ? $timestamp : 0; ?>,
             signature: '<?php echo $signature; ?>',
             message: '<?php echo $message; ?>'
          }

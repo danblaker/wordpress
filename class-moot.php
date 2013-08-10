@@ -11,7 +11,7 @@
 
 class Moot {
 
-   protected $version = '2.0.1';
+   protected $version = '2.0.2';
 
    protected $plugin_slug = 'moot';
 

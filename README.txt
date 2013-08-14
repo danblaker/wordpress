@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: tipiirai
 Tags: forum, commenting, realtime
-Requires at least: 3.5.1
+Requires at least: 3.0.0
 Tested up to: 3.6
 Stable tag: 2.0.2
 License: MIT
@@ -22,7 +22,7 @@ Realtime forums and commenting for Wordpress.
 - **Seach engine optimized**. Improve search engine ranking with user generated content
 - **Spam filtering**, email notifications and 20+ different language versions
 
-[Learn more...](https://moot.it)
+[Learn more...](https://moot.it/docs/wordpress.html)
 
 = Installation =
 

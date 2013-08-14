@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name:   Forums and Commenting re-imagined
+ * Plugin Name:   Moot
  * Plugin URI:    https://moot.it/docs/wordpress.html
  * Author URI:    https://moot.it
  * Description:   Realtime forums and commenting for WordPress

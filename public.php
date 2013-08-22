@@ -55,14 +55,27 @@
 
       if (typeof moot != "function") return $("#moot").remove();
 
-      var moot_conf = "<?php echo $key; ?>" ? {
-         sso: {
-            key: '<?php echo $key; ?>',
-            timestamp: <?php echo $timestamp ? $timestamp : 0; ?>,
-            signature: '<?php echo $signature; ?>',
-            message: '<?php echo $message; ?>'
+      <?php if (get_option('moot_comments_under_forums')) { ?>
+         moot(function(app) {
+            if (app.is_forum) {
+               $(".m-forums").append('<p><a href="#!/wordpress">Comments</a></p>');
+            }
+         })
+      <?php } ?>
+
+      <?php if ($key) { ?>
+         var moot_conf = {
+            sso: {
+               key: '<?php echo $key; ?>',
+               timestamp: <?php echo $timestamp; ?>,
+               signature: '<?php echo $signature; ?>',
+               message: '<?php echo $message; ?>'
+            }
          }
-      } : {};
+      <?php } else { ?>
+         var moot_conf = {};
+
+      <?php } ?>
 
       var default_moot = $("#moot-default-comments"),
          user_moot = $("#moot");

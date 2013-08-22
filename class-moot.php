@@ -11,7 +11,7 @@
 
 class Moot {
 
-   protected $version = '2.0.2';
+   protected $version = '2.0.3';
 
    protected $plugin_slug = 'moot';
 
@@ -71,6 +71,7 @@ class Moot {
       register_setting('moot_options', 'moot_secret_key');
       register_setting('moot_options', 'moot_language');
       register_setting('moot_options', 'moot_generate');
+      register_setting('moot_options', 'moot_comments_under_forums');
    }
 
    // admin menu

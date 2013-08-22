@@ -66,6 +66,12 @@
          Use Moot commenting on posts
       </label>
 
+      <label>
+         <input type="checkbox" name="moot_comments_under_forums" value="true"
+            <?php if (get_option('moot_comments_under_forums') == "true") echo "checked"; ?> >
+         Display "Comments"- link on forum sidebar
+      </label>
+
       <?php if (!$key) { ?>
 
          <div id="no-sso">

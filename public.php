@@ -1,14 +1,21 @@
 
+<!-- Use Moot instead of Wordpress for comments | https://moot.it */ -->
 <style>
-/* Hide default comments in place for Moot: https://moot.it */
-.comments-link, #comment-wrap, #comments, #recent-comments-2, a[href*=comments-rss], a[href*='comments/feed'] {
-   display: none !important;
-}
-.moot { max-width: 100%; margin-bottom: 2em; }
-.moot p { margin-bottom: 0; }
-.moot .m-title { line-height: 1.1; margin: 0; }
-.moot .m-pagetitle { margin: 0 0 .6em; }
+   .has-moot .comments-link,
+   .has-moot #comment-wrap,
+   .has-moot #comments,
+   .has-moot #recent-comments-2,
+   .has-moot a[href*=comments-rss],
+   .has-moot a[href*='comments/feed'],
+   .home-page #moot {
+      display: none !important;
+   }
+   .moot { max-width: 100%; margin-bottom: 2em; }
+   .moot p { margin-bottom: 0; }
+   .moot .m-title { line-height: 1.1; margin: 0; }
+   .moot .m-pagetitle { margin: 0 0 .6em; }
 </style>
+
 
 <?php
 
@@ -53,6 +60,10 @@
 
    $(function() {
 
+      <?php if (get_option('moot_generate') == "true") { ?>
+         $("body").addClass("has-moot");
+      <?php } ?>
+
       if (typeof moot != "function") return $("#moot").remove();
 
       <?php if (get_option('moot_comments_under_forums')) { ?>
@@ -89,6 +100,8 @@
       } else {
          default_moot.moot(moot_conf);
       }
+
+      if (moot()) $("body").addClass("has-moot");
 
    })
 

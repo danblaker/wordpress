@@ -11,7 +11,7 @@
 
 class Moot {
 
-   protected $version = '2.0.3';
+   protected $version = '2.0.4';
 
    protected $plugin_slug = 'moot';
 
@@ -21,11 +21,13 @@ class Moot {
 
 
    private function __construct() {
+      add_filter('the_content', array($this, 'default_comments'));
+
       add_action('wp_enqueue_scripts', array($this, 'moot_includes'));
       add_action('wp_head', array($this, 'moot_head'));
-      add_filter('the_content', array($this, 'default_comments'));
       add_action('admin_menu', array($this, 'moot_admin_menu'));
       add_action('admin_init', array($this, 'moot_settings'));
+
       add_shortcode('moot', array($this, 'moot_shortcode'));
       add_shortcode('no-moot', array($this, 'moot_disable'));
    }

@@ -32,10 +32,15 @@
       $user_info->display_name
     ;
 
-    $avatar = is_callable(bp_core_fetch_avatar) ?
-      bp_core_fetch_avatar(array(item_id => $user_info->ID, 'html' => false)) :
-      "//gravatar.com/avatar/" . md5($user_info->user_email)
-    ;
+    // userpro (bit.ly/1ckc3es) stores avatar URL to user_meta
+    $avatar = get_user_meta($user_info->ID, 'profilepicture', true);
+
+    if (!$avatar) {
+      $avatar = is_callable(bp_core_fetch_avatar) ?
+        bp_core_fetch_avatar(array(item_id => $user_info->ID, 'html' => false)) :
+        "//gravatar.com/avatar/" . md5($user_info->user_email)
+      ;
+    }
 
     $sso = array(
       "user" => array(

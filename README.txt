@@ -3,7 +3,7 @@ Contributors: tipiirai
 Tags: forum, commenting, realtime
 Requires at least: 3.0.0
 Tested up to: 3.6
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 License: MIT
 License URI: https://github.com/moot/wordpress/blob/master/LICENSE.txt
 
@@ -20,7 +20,7 @@ Realtime forums and commenting for Wordpress.
 - **Focus on content**. Text focused, uncluttered and linear user interface
 - **Single Sign-On**. Use the Wordpress login, users and avatars
 - **Seach engine optimized**. Improve search engine ranking with user generated content
-- **Spam filtering**, email notifications and 20+ different language versions
+- **Spam filtering**, email notifications and 24+ different language versions
 
 [Learn more...](https://moot.it/docs/wordpress.html)
 

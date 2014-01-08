@@ -1,4 +1,6 @@
 
+<?php if (!is_super_admin()) { wp_die(__( 'No permission')); } ?>
+
 <!-- Moot settings -->
 <style>
    #moot-settings { font-size: 120%; margin: 50px; }

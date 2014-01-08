@@ -11,7 +11,7 @@
 
 class Moot {
 
-  protected $version = '2.0.7';
+  protected $version = '2.0.8';
 
   protected $plugin_slug = 'moot';
 
@@ -77,11 +77,15 @@ class Moot {
 
   // admin menu
   public function moot_admin_menu() {
-    $this->plugin_screen_hook_suffix = add_plugins_page(
-      __('Moot', $this->plugin_slug),
-      __('Moot', $this->plugin_slug),
-      'read', $this->plugin_slug, array($this, 'moot_admin')
-    );
+
+    if (is_super_admin()) {
+      $this->plugin_screen_hook_suffix = add_plugins_page(
+        __('Moot', $this->plugin_slug),
+        __('Moot', $this->plugin_slug),
+        'read', $this->plugin_slug, array($this, 'moot_admin')
+      );
+    }
+
   }
 
   public function moot_admin() {

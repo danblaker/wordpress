@@ -48,7 +48,7 @@
         "email" => $user_info->user_email,
         "avatar" => $avatar,
         "displayname" => $display_name,
-        "is_admin" => current_user_can('level_10')
+        "is_admin" => is_super_admin()
       )
     );
 

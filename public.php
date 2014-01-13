@@ -94,17 +94,21 @@ $(function() {
 
   <?php } ?>
 
-  var default_moot = $("#moot-default-comments"),
+  var default_moots = $("a[id='moot-default-comments']"),
     user_moot = $("#moot");
 
   if ($("#no-moot")[0]) return default_moot.remove();
 
-  if (user_moot[0]) {
+  // no support multiple instances yet
+  if (default_moots[1]) {
+    default_moots.remove();
+
+  } else if (user_moot[0]) {
     user_moot.moot(moot_conf);
     default_moot.remove();
 
   } else {
-    default_moot.moot(moot_conf);
+    default_moots.moot(moot_conf);
   }
 
   if (moot()) $("body").addClass("has-moot");

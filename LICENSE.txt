@@ -1,4 +1,4 @@
-Copyright (c) 2013 Moot Inc, https://moot.it
+Copyright (c) 2014 Moot Inc, https://moot.it
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

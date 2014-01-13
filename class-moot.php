@@ -6,12 +6,12 @@
  * @author   Tero Piirainen <tero@moot.it>
  * @license  MIT
  * @link    https://moot.it/docs/wordpress.html
- * @copyright 2013 Moot Inc
+ * @copyright 2014 Moot Inc
  */
 
 class Moot {
 
-  protected $version = '2.0.8';
+  protected $version = '2.0.9';
 
   protected $plugin_slug = 'moot';
 

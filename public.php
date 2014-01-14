@@ -105,7 +105,7 @@ $(function() {
 
   } else if (user_moot[0]) {
     user_moot.moot(moot_conf);
-    default_moot.remove();
+    default_moots.remove();
 
   } else {
     default_moots.moot(moot_conf);

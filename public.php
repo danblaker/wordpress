@@ -36,7 +36,7 @@
     $avatar = get_user_meta($user_info->ID, 'profilepicture', true);
 
     if (!$avatar) {
-      $avatar = is_callable(bp_core_fetch_avatar) ?
+      $avatar = function_exists('bp_core_fetch_avatar') ?
         bp_core_fetch_avatar(array(item_id => $user_info->ID, 'html' => false)) :
         "//gravatar.com/avatar/" . md5($user_info->user_email)
       ;

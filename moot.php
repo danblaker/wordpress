@@ -4,7 +4,7 @@
  * Plugin URI:    https://moot.it/docs/wordpress.html
  * Author URI:    https://moot.it
  * Description:   Realtime forums and commenting for WordPress
- * Version:       2.0.9
+ * Version:       2.0.10
  * Author:        Moot Inc
  * Text Domain:   moot
  * License:       MIT

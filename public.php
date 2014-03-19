@@ -81,7 +81,7 @@ $(function() {
 
   <?php if ($key) { ?>
     var moot_conf = {
-      login_url: '<?php echo wp_login_url(); ?>',
+      login_url: '<?php echo wp_login_url(get_permalink()); ?>',
       sso: {
         key: '<?php echo $key; ?>',
         timestamp: <?php echo $timestamp; ?>,

@@ -3,7 +3,7 @@ Contributors: tipiirai
 Tags: forum, commenting, realtime
 Requires at least: 3.0.0
 Tested up to: 3.8
-Stable tag: 2.0.10
+Stable tag: 2.0.11
 License: MIT
 License URI: https://github.com/moot/wordpress/blob/master/LICENSE.txt
 

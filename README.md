@@ -1,7 +1,7 @@
 
 ### Modern forums and commenting for Wordpress
 
-![Moot commenting on Wordpress site](https://moot.it/docs/img/wp-commenting.png)
+![Moot commenting on Wordpress site](https://moot.it/docs/img/wp/commenting.png)
 
 - **Unified** system for both forums and commenting. Same users and design
 - **Full featured forums** makes your WordPress site conversational
